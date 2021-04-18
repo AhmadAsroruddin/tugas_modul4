@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Scanner;
+
 public class TugasModul4 {
     public class pilihKamar {
         public void kamarPilihan(int jumlah, String pilihan, String[][] kamar){
@@ -22,5 +24,28 @@ public class TugasModul4 {
         }
     }
 
+    public static void main(String[]args){
+        Scanner scan = new Scanner(System.in);
+        String [][] kamar = {{"Cendana", "kosong"}, {"Mawar", "kosong"}, {"Melati", "kosong"}, {"Sakura","kosong"}};
+        System.out.println("Selamat Datang di Rumah Sakit Suka Sembuh");
+
+        System.out.println("Siapa nama anda?");
+        String pasien = scan.nextLine();
+        int i =0;
+        do{
+            if(KamarTersedia(kamar) == 0){
+                System.out.println("Kamar mana yang anda ambil?");
+                String pilihan = scan.nextLine();
+
+                com.example.pilihKamar objek = new com.example.pilihKamar();
+                objek.kamarPilihan(3, pilihan,kamar);
+            } else {
+                System.out.println("Kamar Penuh!!!");
+                break;
+            }
+
+        }while(i>=0);
+
+    }
 
 }
